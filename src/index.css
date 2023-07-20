@@ -30,6 +30,19 @@ li {
 .input {
   font-style: italic;
   border: none;
+  padding: 15px;
+  outline: none;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.material-icons {
+  cursor: pointer;
+}
+
+.description {
+  outline: none;
 }
 
 .container {

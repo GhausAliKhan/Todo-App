@@ -53,6 +53,19 @@ li {
 .input {
   font-style: italic;
   border: none;
+  padding: 15px;
+  outline: none;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.material-icons {
+  cursor: pointer;
+}
+
+.description {
+  outline: none;
 }
 
 .container {
@@ -84,7 +97,7 @@ li {
   color: rgb(97, 95, 95);
   cursor: pointer;
 }
-`, "",{"version":3,"sources":["webpack://./src/index.css"],"names":[],"mappings":"AAAA;EACE,UAAU;EACV,SAAS;EACT,sBAAsB;AACxB;;AAEA;EACE,sBAAsB;EACtB,aAAa;EACb,uBAAuB;EACvB,uBAAuB;AACzB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;;;EAGE,aAAa;EACb,oCAAoC;EACpC,sBAAsB;EACtB,QAAQ;EACR,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;EAClB,YAAY;AACd;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,eAAe;EACf,YAAY;EACZ,aAAa;EACb,oCAAoC;EACpC,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,sBAAsB;AACxB;;AAEA;EACE,aAAa;EACb,SAAS;AACX;;AAEA;EACE,WAAW;EACX,aAAa;EACb,eAAe;EACf,yBAAyB;EACzB,kCAAkC;EAClC,sBAAsB;EACtB,eAAe;AACjB","sourcesContent":["* {\r\n  padding: 0;\r\n  margin: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: #eee;\r\n  display: flex;\r\n  justify-content: center;\r\n  font-family: sans-serif;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.todo-title-box,\r\n.todo-input-box,\r\n.todo-task-container {\r\n  padding: 15px;\r\n  border: 1px solid rgb(219, 219, 219);\r\n  background-color: #fff;\r\n  gap: 8px;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.input {\r\n  font-style: italic;\r\n  border: none;\r\n}\r\n\r\n.container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  min-width: 50vw;\r\n  height: auto;\r\n  padding: 10px;\r\n  border: 1px solid rgb(176, 176, 176);\r\n  margin-top: 5%;\r\n}\r\n\r\n.todo-list-box {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.task {\r\n  display: flex;\r\n  gap: 15px;\r\n}\r\n\r\n.clear-btn {\r\n  width: 100%;\r\n  padding: 20px;\r\n  font-size: 1rem;\r\n  background-color: #e9e7e7;\r\n  border: 1px solid rgb(205 205 205);\r\n  color: rgb(97, 95, 95);\r\n  cursor: pointer;\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/index.css"],"names":[],"mappings":"AAAA;EACE,UAAU;EACV,SAAS;EACT,sBAAsB;AACxB;;AAEA;EACE,sBAAsB;EACtB,aAAa;EACb,uBAAuB;EACvB,uBAAuB;AACzB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;;;EAGE,aAAa;EACb,oCAAoC;EACpC,sBAAsB;EACtB,QAAQ;EACR,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,aAAa;EACb,sBAAsB;EACtB,aAAa;EACb,mBAAmB;AACrB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,eAAe;EACf,YAAY;EACZ,aAAa;EACb,oCAAoC;EACpC,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,sBAAsB;AACxB;;AAEA;EACE,aAAa;EACb,SAAS;AACX;;AAEA;EACE,WAAW;EACX,aAAa;EACb,eAAe;EACf,yBAAyB;EACzB,kCAAkC;EAClC,sBAAsB;EACtB,eAAe;AACjB","sourcesContent":["* {\r\n  padding: 0;\r\n  margin: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: #eee;\r\n  display: flex;\r\n  justify-content: center;\r\n  font-family: sans-serif;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.todo-title-box,\r\n.todo-input-box,\r\n.todo-task-container {\r\n  padding: 15px;\r\n  border: 1px solid rgb(219, 219, 219);\r\n  background-color: #fff;\r\n  gap: 8px;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.input {\r\n  font-style: italic;\r\n  border: none;\r\n  padding: 15px;\r\n  outline: none;\r\n  background-color: #fff;\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.material-icons {\r\n  cursor: pointer;\r\n}\r\n\r\n.description {\r\n  outline: none;\r\n}\r\n\r\n.container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  min-width: 50vw;\r\n  height: auto;\r\n  padding: 10px;\r\n  border: 1px solid rgb(176, 176, 176);\r\n  margin-top: 5%;\r\n}\r\n\r\n.todo-list-box {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.task {\r\n  display: flex;\r\n  gap: 15px;\r\n}\r\n\r\n.clear-btn {\r\n  width: 100%;\r\n  padding: 20px;\r\n  font-size: 1rem;\r\n  background-color: #e9e7e7;\r\n  border: 1px solid rgb(205 205 205);\r\n  color: rgb(97, 95, 95);\r\n  cursor: pointer;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -529,6 +542,173 @@ function styleTagTransform(css, styleElement) {
 }
 module.exports = styleTagTransform;
 
+/***/ }),
+
+/***/ "./src/modules/crud.js":
+/*!*****************************!*\
+  !*** ./src/modules/crud.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// Class to create a Todo App.
+class TodoApp {
+  // Constructs the Todo App, fetch tasks from local storage and set up event listeners.
+  constructor() {
+    this.inputField = document.getElementById("input");
+    this.returnIcon = document.getElementById("return-icon");
+    this.todoTask = JSON.parse(localStorage.getItem("todoTasks")) || [];
+    this.todoListBox = document.getElementById("todo-list-box");
+    this.render();
+    this.AddTaskPressEnter();
+    this.AddTaskPressIcon();
+    this.DeleteTaskButton();
+  }
+
+  // Set an event listener for deleting a task when a specific element is clicked
+  DeleteTaskButton() {
+    this.todoListBox.addEventListener("mousedown", (e) => {
+      if (e.target.closest(".trash-icon")) {
+        this.deleteTask(e.target.dataset.task);
+      }
+    });
+  }
+
+  // Set an event listener for adding a task when return button is clicked
+  AddTaskPressIcon() {
+    this.returnIcon.addEventListener("click", (e) => {
+      this.addTask(this.inputField.value);
+      this.inputField.value = "";
+      e.preventDefault();
+    });
+  }
+
+  // Set an event listener for adding task when enter button is pressed
+  AddTaskPressEnter() {
+    this.inputField.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        this.addTask(this.inputField.value);
+        this.inputField.value = "";
+      }
+    });
+  }
+
+  // Sorts the tasks based on their index
+  sortTasks() {
+    this.todoTask.sort((a, b) => a.index - b.index);
+  }
+
+  // Refreshes the tasks presented in the UI
+  render() {
+    this.sortTasks();
+    this.todoListBox.innerHTML = "";
+
+    this.todoTask.forEach((task, i) => {
+      const todoTaskElement = document.createElement("li");
+      todoTaskElement.classList.add("todo-task-container");
+
+      const todoTaskContent = document.createElement("div");
+      todoTaskContent.classList.add("task");
+
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.checked = task.completed;
+
+      todoTaskContent.appendChild(checkbox);
+
+      const description = document.createElement("span");
+      description.classList.add("description");
+      description.contentEditable = "true";
+      description.textContent = task.description;
+      description.addEventListener("input", () => {
+        this.editTask(i, description.textContent);
+      });
+      todoTaskContent.appendChild(description);
+
+      const deleteIcon = document.createElement("span");
+      deleteIcon.innerHTML = "delete";
+      deleteIcon.classList.add("material-icons", "trash-icon");
+      deleteIcon.style.display = "none";
+      deleteIcon.dataset.task = i;
+
+      const moreVertIcon = document.createElement("span");
+      moreVertIcon.innerHTML = "more_vert";
+      moreVertIcon.classList.add("material-icons", "dots-icon");
+
+      todoTaskElement.append(todoTaskContent, deleteIcon, moreVertIcon);
+
+      // Add the task element to the to-do list.
+      this.todoListBox.appendChild(todoTaskElement);
+
+      todoTaskElement.addEventListener(
+        "focus",
+        (event) => {
+          event.currentTarget.querySelector(".dots-icon").style.display =
+            "none";
+          event.currentTarget.querySelector(".trash-icon").style.display = "";
+          event.currentTarget.style.backgroundColor = "lightyellow";
+        },
+        true
+      );
+
+      todoTaskElement.addEventListener(
+        "blur",
+        (event) => {
+          event.currentTarget.querySelector(".dots-icon").style.display = "";
+          event.currentTarget.querySelector(".trash-icon").style.display =
+            "none";
+          event.currentTarget.style.backgroundColor = "";
+        },
+        true
+      );
+    });
+
+    // Update local storage.
+    this.updateLocalStorage();
+  }
+
+  // Add new task with the given description, updates local storage and the UI.
+  addTask(description) {
+    if (description.trim() !== "") {
+      const newTask = {
+        description,
+        completed: false,
+        index: this.todoTask.length + 1,
+      };
+      this.todoTask.push(newTask);
+      this.updateLocalStorage();
+      this.render();
+    }
+  }
+
+  // Delete task with matching id, updates local storage and UI.
+  deleteTask(taskId) {
+    this.todoTask.splice(taskId, 1);
+    this.todoTask.forEach((task, index) => task.index === index);
+    this.updateLocalStorage();
+    this.render();
+  }
+
+  // Edit task description, update local storage and UI.
+  editTask(taskId, newDescription) {
+    if (this.todoTask[taskId]) {
+      this.todoTask[taskId].description = newDescription;
+      this.updateLocalStorage();
+    }
+  }
+
+  // Persist current state of tasks to local storage
+  updateLocalStorage() {
+    localStorage.setItem("todoTasks", JSON.stringify(this.todoTask));
+  }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TodoApp);
+
+
 /***/ })
 
 /******/ 	});
@@ -612,49 +792,17 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ "./src/index.css");
+/* harmony import */ var _modules_crud_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/crud.js */ "./src/modules/crud.js");
 
-const todoListBox = document.getElementById("todo-list-box");
 
-const todoTasks = [
-  {
-    description: "Do Workout",
-    completed: true,
-    index: 1,
-  },
-  {
-    description: "Make Breakfast",
-    completed: true,
-    index: 2,
-  },
-  {
-    description: "Finish Project",
-    completed: true,
-    index: 3,
-  },
-];
 
-const todoListSort = todoTasks.sort((a, b) => a.index - b.index);
+const todoListBox = document.getElementById('todo-list-box');
+const todoApp = new _modules_crud_js__WEBPACK_IMPORTED_MODULE_1__["default"](todoListBox);
 
-const generateTasks = () => {
-  todoListSort.forEach((task) => {
-    todoListBox.innerHTML += `
-    <div class='todo-task-container'>
-      <div class='task'>
-        <input type='checkbox'
-          id=${task.description}
-          name=${task.description}>
-        <li>${task.description}</li>
-      </div>
-      <span class="material-icons">more_vert</span>
-    </div>
-    `;
-  });
-};
-
-generateTasks();
+todoApp.render();
 
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle67d73fcae1d6a14ba60f.js.map
+//# sourceMappingURL=bundle02f1ace638ad77eb9c3b.js.map
