@@ -1,4 +1,4 @@
 function message() {
-  return "Hello World";
+  return 'Hello World';
 }
 export default message;

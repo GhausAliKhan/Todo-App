@@ -1,3 +1,4 @@
-import message from "./modules/crud";
-import "./index.css";
+import message from './modules/crud.js';
+import './index.css';
+
 console.log(message());
