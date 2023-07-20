@@ -21,10 +21,70 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `body {
-  background-color: bisque;
+___CSS_LOADER_EXPORT___.push([module.id, `* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-`, "",{"version":3,"sources":["webpack://./src/index.css"],"names":[],"mappings":"AAAA;EACE,wBAAwB;AAC1B","sourcesContent":["body {\r\n  background-color: bisque;\r\n}\r\n"],"sourceRoot":""}]);
+
+body {
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+.todo-title-box,
+.todo-input-box,
+.todo-task-container {
+  padding: 15px;
+  border: 1px solid rgb(219, 219, 219);
+  background-color: #fff;
+  gap: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input {
+  font-style: italic;
+  border: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 50vw;
+  height: auto;
+  padding: 10px;
+  border: 1px solid rgb(176, 176, 176);
+  margin-top: 5%;
+}
+
+.todo-list-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.task {
+  display: flex;
+  gap: 15px;
+}
+
+.clear-btn {
+  width: 100%;
+  padding: 20px;
+  font-size: 1rem;
+  background-color: #e9e7e7;
+  border: 1px solid rgb(205 205 205);
+  color: rgb(97, 95, 95);
+  cursor: pointer;
+}
+`, "",{"version":3,"sources":["webpack://./src/index.css"],"names":[],"mappings":"AAAA;EACE,UAAU;EACV,SAAS;EACT,sBAAsB;AACxB;;AAEA;EACE,sBAAsB;EACtB,aAAa;EACb,uBAAuB;EACvB,uBAAuB;AACzB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;;;EAGE,aAAa;EACb,oCAAoC;EACpC,sBAAsB;EACtB,QAAQ;EACR,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;AACrB;;AAEA;EACE,kBAAkB;EAClB,YAAY;AACd;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,eAAe;EACf,YAAY;EACZ,aAAa;EACb,oCAAoC;EACpC,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,sBAAsB;AACxB;;AAEA;EACE,aAAa;EACb,SAAS;AACX;;AAEA;EACE,WAAW;EACX,aAAa;EACb,eAAe;EACf,yBAAyB;EACzB,kCAAkC;EAClC,sBAAsB;EACtB,eAAe;AACjB","sourcesContent":["* {\r\n  padding: 0;\r\n  margin: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: #eee;\r\n  display: flex;\r\n  justify-content: center;\r\n  font-family: sans-serif;\r\n}\r\n\r\nli {\r\n  list-style: none;\r\n}\r\n\r\n.todo-title-box,\r\n.todo-input-box,\r\n.todo-task-container {\r\n  padding: 15px;\r\n  border: 1px solid rgb(219, 219, 219);\r\n  background-color: #fff;\r\n  gap: 8px;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.input {\r\n  font-style: italic;\r\n  border: none;\r\n}\r\n\r\n.container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  min-width: 50vw;\r\n  height: auto;\r\n  padding: 10px;\r\n  border: 1px solid rgb(176, 176, 176);\r\n  margin-top: 5%;\r\n}\r\n\r\n.todo-list-box {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.task {\r\n  display: flex;\r\n  gap: 15px;\r\n}\r\n\r\n.clear-btn {\r\n  width: 100%;\r\n  padding: 20px;\r\n  font-size: 1rem;\r\n  background-color: #e9e7e7;\r\n  border: 1px solid rgb(205 205 205);\r\n  color: rgb(97, 95, 95);\r\n  cursor: pointer;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -469,24 +529,6 @@ function styleTagTransform(css, styleElement) {
 }
 module.exports = styleTagTransform;
 
-/***/ }),
-
-/***/ "./src/modules/crud.js":
-/*!*****************************!*\
-  !*** ./src/modules/crud.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-function message() {
-  return "Hello World";
-}
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (message);
-
-
 /***/ })
 
 /******/ 	});
@@ -569,14 +611,50 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_crud__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/crud */ "./src/modules/crud.js");
-/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.css */ "./src/index.css");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ "./src/index.css");
 
+const todoListBox = document.getElementById("todo-list-box");
 
-console.log((0,_modules_crud__WEBPACK_IMPORTED_MODULE_0__["default"])());
+const todoTasks = [
+  {
+    description: "Do Workout",
+    completed: true,
+    index: 1,
+  },
+  {
+    description: "Make Breakfast",
+    completed: true,
+    index: 2,
+  },
+  {
+    description: "Finish Project",
+    completed: true,
+    index: 3,
+  },
+];
+
+const todoListSort = todoTasks.sort((a, b) => a.index - b.index);
+
+const generateTasks = () => {
+  todoListSort.forEach((task) => {
+    todoListBox.innerHTML += `
+    <div class='todo-task-container'>
+      <div class='task'>
+        <input type='checkbox'
+          id=${task.description}
+          name=${task.description}>
+        <li>${task.description}</li>
+      </div>
+      <span class="material-icons">more_vert</span>
+    </div>
+    `;
+  });
+};
+
+generateTasks();
 
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle3a9abcae7246e4fc5d8a.js.map
+//# sourceMappingURL=bundle67d73fcae1d6a14ba60f.js.map
