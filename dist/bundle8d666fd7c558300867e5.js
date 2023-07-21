@@ -554,14 +554,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _status_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./status.js */ "./src/modules/status.js");
+
 // Class to create a Todo App.
 class TodoApp {
   // Constructs the Todo App, fetch tasks from local storage and set up event listeners.
   constructor() {
-    this.inputField = document.getElementById("input");
-    this.returnIcon = document.getElementById("return-icon");
-    this.todoTask = JSON.parse(localStorage.getItem("todoTasks")) || [];
-    this.todoListBox = document.getElementById("todo-list-box");
+    this.inputField = document.getElementById('input');
+    this.returnIcon = document.getElementById('return-icon');
+    this.todoTask = JSON.parse(localStorage.getItem('todoTasks')) || [];
+    this.todoListBox = document.getElementById('todo-list-box');
     this.render();
     this.AddTaskPressEnter();
     this.AddTaskPressIcon();
@@ -570,8 +572,8 @@ class TodoApp {
 
   // Set an event listener for deleting a task when a specific element is clicked
   DeleteTaskButton() {
-    this.todoListBox.addEventListener("mousedown", (e) => {
-      if (e.target.closest(".trash-icon")) {
+    this.todoListBox.addEventListener('mousedown', (e) => {
+      if (e.target.closest('.trash-icon')) {
         this.deleteTask(e.target.dataset.task);
       }
     });
@@ -579,19 +581,19 @@ class TodoApp {
 
   // Set an event listener for adding a task when return button is clicked
   AddTaskPressIcon() {
-    this.returnIcon.addEventListener("click", (e) => {
+    this.returnIcon.addEventListener('click', (e) => {
       this.addTask(this.inputField.value);
-      this.inputField.value = "";
+      this.inputField.value = '';
       e.preventDefault();
     });
   }
 
   // Set an event listener for adding task when enter button is pressed
   AddTaskPressEnter() {
-    this.inputField.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") {
+    this.inputField.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
         this.addTask(this.inputField.value);
-        this.inputField.value = "";
+        this.inputField.value = '';
       }
     });
   }
@@ -604,39 +606,48 @@ class TodoApp {
   // Refreshes the tasks presented in the UI
   render() {
     this.sortTasks();
-    this.todoListBox.innerHTML = "";
+    this.todoListBox.innerHTML = '';
 
     this.todoTask.forEach((task, i) => {
-      const todoTaskElement = document.createElement("li");
-      todoTaskElement.classList.add("todo-task-container");
+      const todoTaskElement = document.createElement('li');
+      todoTaskElement.classList.add('todo-task-container');
 
-      const todoTaskContent = document.createElement("div");
-      todoTaskContent.classList.add("task");
+      const todoTaskContent = document.createElement('div');
+      todoTaskContent.classList.add('task');
 
-      const checkbox = document.createElement("input");
-      checkbox.type = "checkbox";
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
       checkbox.checked = task.completed;
+
+      checkbox.addEventListener('change', () => {
+        this.todoTask = (0,_status_js__WEBPACK_IMPORTED_MODULE_0__.updateCompletionStatus)(
+          i,
+          checkbox.checked,
+          this.todoTask,
+        );
+        this.updateLocalStorage();
+      });
 
       todoTaskContent.appendChild(checkbox);
 
-      const description = document.createElement("span");
-      description.classList.add("description");
-      description.contentEditable = "true";
+      const description = document.createElement('span');
+      description.classList.add('description');
+      description.contentEditable = 'true';
       description.textContent = task.description;
-      description.addEventListener("input", () => {
+      description.addEventListener('input', () => {
         this.editTask(i, description.textContent);
       });
       todoTaskContent.appendChild(description);
 
-      const deleteIcon = document.createElement("span");
-      deleteIcon.innerHTML = "delete";
-      deleteIcon.classList.add("material-icons", "trash-icon");
-      deleteIcon.style.display = "none";
+      const deleteIcon = document.createElement('span');
+      deleteIcon.innerHTML = 'delete';
+      deleteIcon.classList.add('material-icons', 'trash-icon');
+      deleteIcon.style.display = 'none';
       deleteIcon.dataset.task = i;
 
-      const moreVertIcon = document.createElement("span");
-      moreVertIcon.innerHTML = "more_vert";
-      moreVertIcon.classList.add("material-icons", "dots-icon");
+      const moreVertIcon = document.createElement('span');
+      moreVertIcon.innerHTML = 'more_vert';
+      moreVertIcon.classList.add('material-icons', 'dots-icon');
 
       todoTaskElement.append(todoTaskContent, deleteIcon, moreVertIcon);
 
@@ -644,25 +655,23 @@ class TodoApp {
       this.todoListBox.appendChild(todoTaskElement);
 
       todoTaskElement.addEventListener(
-        "focus",
+        'focus',
         (event) => {
-          event.currentTarget.querySelector(".dots-icon").style.display =
-            "none";
-          event.currentTarget.querySelector(".trash-icon").style.display = "";
-          event.currentTarget.style.backgroundColor = "lightyellow";
+          event.currentTarget.querySelector('.dots-icon').style.display = 'none';
+          event.currentTarget.querySelector('.trash-icon').style.display = '';
+          event.currentTarget.style.backgroundColor = 'lightyellow';
         },
-        true
+        true,
       );
 
       todoTaskElement.addEventListener(
-        "blur",
+        'blur',
         (event) => {
-          event.currentTarget.querySelector(".dots-icon").style.display = "";
-          event.currentTarget.querySelector(".trash-icon").style.display =
-            "none";
-          event.currentTarget.style.backgroundColor = "";
+          event.currentTarget.querySelector('.dots-icon').style.display = '';
+          event.currentTarget.querySelector('.trash-icon').style.display = 'none';
+          event.currentTarget.style.backgroundColor = '';
         },
-        true
+        true,
       );
     });
 
@@ -670,9 +679,19 @@ class TodoApp {
     this.updateLocalStorage();
   }
 
+  // Clears all completed tasks, updates local storage and the UI.
+  clearAllCompletedTasks() {
+    this.todoTask = (0,_status_js__WEBPACK_IMPORTED_MODULE_0__.clearAllCompleted)(this.todoTask);
+    this.todoTask.forEach((task, index) => {
+      task.index = index + 1;
+    });
+    this.updateLocalStorage();
+    this.render();
+  }
+
   // Add new task with the given description, updates local storage and the UI.
   addTask(description) {
-    if (description.trim() !== "") {
+    if (description.trim() !== '') {
       const newTask = {
         description,
         completed: false,
@@ -687,7 +706,9 @@ class TodoApp {
   // Delete task with matching id, updates local storage and UI.
   deleteTask(taskId) {
     this.todoTask.splice(taskId, 1);
-    this.todoTask.forEach((task, index) => task.index === index);
+    this.todoTask.forEach((task, index) => {
+      task.index = index + 1;
+    });
     this.updateLocalStorage();
     this.render();
   }
@@ -702,11 +723,32 @@ class TodoApp {
 
   // Persist current state of tasks to local storage
   updateLocalStorage() {
-    localStorage.setItem("todoTasks", JSON.stringify(this.todoTask));
+    localStorage.setItem('todoTasks', JSON.stringify(this.todoTask));
   }
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TodoApp);
+
+
+/***/ }),
+
+/***/ "./src/modules/status.js":
+/*!*******************************!*\
+  !*** ./src/modules/status.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   clearAllCompleted: () => (/* binding */ clearAllCompleted),
+/* harmony export */   updateCompletionStatus: () => (/* binding */ updateCompletionStatus)
+/* harmony export */ });
+const updateCompletionStatus = (taskId, status, tasks) => {
+  tasks[taskId].completed = status;
+  return tasks;
+};
+
+const clearAllCompleted = (tasks) => tasks.filter((task) => !task.completed);
 
 
 /***/ })
@@ -799,10 +841,13 @@ __webpack_require__.r(__webpack_exports__);
 const todoListBox = document.getElementById('todo-list-box');
 const todoApp = new _modules_crud_js__WEBPACK_IMPORTED_MODULE_1__["default"](todoListBox);
 
+const clearCompletedButton = document.getElementById('clear-completed-button');
+clearCompletedButton.addEventListener('click', () => todoApp.clearAllCompletedTasks());
+
 todoApp.render();
 
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle02f1ace638ad77eb9c3b.js.map
+//# sourceMappingURL=bundle8d666fd7c558300867e5.js.map
