@@ -129,7 +129,9 @@ class TodoApp {
   // Delete task with matching id, updates local storage and UI.
   deleteTask(taskId) {
     this.todoTask.splice(taskId, 1);
-    this.todoTask.forEach((task, index) => task.index === index);
+    this.todoTask.forEach((task, index) => {
+      task.index = index + 1;
+    });
     this.updateLocalStorage();
     this.render();
   }
